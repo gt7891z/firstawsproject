@@ -51,6 +51,7 @@ class FirstAwsProjectStack(core.Stack):
             "Record",
             zone=zone,
             target=r53.RecordTarget.from_alias(r53targets.CloudFrontTarget(cdn)),
+            record_name=host_name
         )
 
         s3deploy.BucketDeployment(
