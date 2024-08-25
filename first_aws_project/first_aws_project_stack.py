@@ -41,8 +41,9 @@ class FirstAwsProjectStack(core.Stack):
             default_behavior=cloudfront.BehaviorOptions(
                 origin=origins.S3Origin(bucket)
             ),
-            default_root_object="index.html",
+            default_root_object="main.html",
             certificate=certificate,
+            price_class=cloudfront.PriceClass.PRICE_CLASS_100,
             domain_names=[fqdn],
         )
 
